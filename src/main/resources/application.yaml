@@ -1,0 +1,37 @@
+server:
+  port : 8080
+  undertow:
+    threads:
+      io: 8
+      worker: 200
+
+spring:
+  application:
+    name: bizns_batch
+
+  batch:
+    job:
+      enabled: true
+      name: chunksJob
+
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+  datasource:
+    url: ENC(GijXi97uAMqlultwuH+2i7U8tPeiWSIvphDdJshwEt8QhVsnhoWlMijagmvMdakyJWa1EFbfjJD1kZEOIQ+L5cXBQSAMZDb/xCzrzayUcvjN7+Kfu3j8KTXRWooguurnlBzw+fWa7mmYkfKBz26mtOIliRFWVSdFyTWm+P9Mn/9KiW0PElpSXbwLQG4ZlaLYMv0kkV9E79/Mxq+izQuGA+5UbjjxQ6ZV)
+    username: ENC(UbkpACfBk4Eau+tQaE/gUA==)
+    password: ENC(2bJ0E4SUypuviJTkuKP3t+oLp9qlgb3W)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    root: info
